@@ -1,2 +1,2 @@
 # devopswithdocker
-Exercises for the DevOps with Docker 2021 course.
+Tasks for the [DevOps with Docker course](https://devopswithdocker.com/).
