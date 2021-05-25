@@ -1,0 +1,29 @@
+marko@arthur 1.8 % docker build . -t curler && docker run -it curler
+[+] Building 13.4s (9/9) FINISHED                                                                                                                                                                           
+ => [internal] load build definition from Dockerfile                                                                                                                                                   0.0s
+ => => transferring dockerfile: 155B                                                                                                                                                                   0.0s
+ => [internal] load .dockerignore                                                                                                                                                                      0.0s
+ => => transferring context: 2B                                                                                                                                                                        0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:18.04                                                                                                                                        0.7s
+ => [internal] load build context                                                                                                                                                                      0.0s
+ => => transferring context: 30B                                                                                                                                                                       0.0s
+ => [1/4] FROM docker.io/library/ubuntu:18.04@sha256:04919776d30640ce4ed24442d5f7c1a8e4bd0e4793ed9469843cedaecb0d72fb                                                                                  0.0s
+ => CACHED [2/4] WORKDIR /usr/src/app                                                                                                                                                                  0.0s
+ => CACHED [3/4] COPY curler.sh .                                                                                                                                                                      0.0s
+ => [4/4] RUN apt update && apt install --yes curl                                                                                                                                                    12.5s
+ => exporting to image                                                                                                                                                                                 0.1s
+ => => exporting layers                                                                                                                                                                                0.1s
+ => => writing image sha256:31b9599ae51a9a607f89f7dab0420d5132588fd5119d9db2cdd72f64e3ad7aae                                                                                                           0.0s 
+ => => naming to docker.io/library/curler                                                                                                                                                              0.0s 
+Input website:                                                                                                                                                                                              
+helsinki.fi                                                                                                                                                                                                 
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://www.helsinki.fi/">here</a>.</p>
+</body></html>
+marko@arthur 1.8 % 
+

@@ -1,0 +1,41 @@
+marko@arthur devopswithdocker % docker run -it devopsdockeruh/simple-web-service:ubuntu
+Unable to find image 'devopsdockeruh/simple-web-service:ubuntu' locally
+ubuntu: Pulling from devopsdockeruh/simple-web-service
+5d3b2c2d21bb: Pull complete 
+3fc2062ea667: Pull complete 
+75adf526d75b: Pull complete 
+965d4bbb586a: Pull complete 
+4f4fb700ef54: Pull complete 
+Digest: sha256:d44e1dce398732e18c7c2bad9416a072f719af33498302b02929d4c112e88d2a
+Status: Downloaded newer image for devopsdockeruh/simple-web-service:ubuntu
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+Starting log output
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+marko@arthur devopswithdocker % docker ps                                              
+CONTAINER ID   IMAGE                                      COMMAND                 CREATED          STATUS          PORTS     NAMES
+1ec05de240a5   devopsdockeruh/simple-web-service:ubuntu   "/usr/src/app/server"   45 seconds ago   Up 43 seconds             great_almeida
+marko@arthur devopswithdocker % docker exec -it 1ec cat /usr/src/app/text.log
+2021-05-24 13:19:43 +0000 UTC
+2021-05-24 13:19:45 +0000 UTC
+2021-05-24 13:19:47 +0000 UTC
+2021-05-24 13:19:49 +0000 UTC
+2021-05-24 13:19:51 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+...
+

@@ -1,0 +1,36 @@
+marko@arthur 1.11 % cp -r ../material-applications/spring-example-project/* .
+marko@arthur 1.11 % docker build . -t spring-app                                
+[+] Building 28.2s (9/9) FINISHED                                                                                                                                                                           
+ => [internal] load build definition from Dockerfile                                                                                                                                                   0.0s
+ => => transferring dockerfile: 37B                                                                                                                                                                    0.0s
+ => [internal] load .dockerignore                                                                                                                                                                      0.0s
+ => => transferring context: 2B                                                                                                                                                                        0.0s
+ => [internal] load metadata for docker.io/library/openjdk:8                                                                                                                                           0.6s
+ => [1/4] FROM docker.io/library/openjdk:8@sha256:840e786513eac99c76c7e57fe26d74ff17cb5715e7c145cb5bee6fca23020f9d                                                                                     0.0s
+ => [internal] load build context                                                                                                                                                                      0.0s
+ => => transferring context: 6.04kB                                                                                                                                                                    0.0s
+ => CACHED [2/4] WORKDIR /usr/src/app                                                                                                                                                                  0.0s
+ => [3/4] COPY . .                                                                                                                                                                                     0.0s
+ => [4/4] RUN ./mvnw package                                                                                                                                                                          27.1s
+ => exporting to image                                                                                                                                                                                 0.3s
+ => => exporting layers                                                                                                                                                                                0.3s
+ => => writing image sha256:72e970bd6ca2470ac985eed89175da49fbe9dff3d922fdab5d5cb5938e4d6e84                                                                                                           0.0s 
+ => => naming to docker.io/library/spring-app                                                                                                                                                          0.0s 
+marko@arthur 1.11 % docker run -d -p 8081:8080 spring-app                                                      
+d97bf7735460f06e446bb4a0bf194da27526430bb3d297640883deb3a445653d
+marko@arthur 1.11 % curl localhost:8081
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">        <title>Spring</title>
+        <meta charset="UTF-8" />
+
+    </head>
+    <body style="width: fit-content; padding-top: 3em; margin: auto;">
+        <form action="/press" method="post">
+            <button class="btn btn-info btn-outline-dark" type="submit">Press here</button>
+        </form>
+        <p style="width: fit-content; margin: auto;"></p>
+    </body>
+</html>
+marko@arthur 1.11 % 

@@ -1,0 +1,5 @@
+marko@arthur devopswithdocker % docker ps -a                 
+CONTAINER ID   IMAGE     COMMAND                  CREATED              STATUS                     PORTS      NAMES
+98e1e0528358   redis     "docker-entrypoint.s…"   29 seconds ago       Up 28 seconds              6379/tcp   optimistic_moore
+1c653cba72c6   httpd     "httpd-foreground"       About a minute ago   Exited (0) 6 seconds ago              cranky_dijkstra
+240f88ab367e   nginx     "/docker-entrypoint.…"   About a minute ago   Exited (0) 2 seconds ago              beautiful_kare

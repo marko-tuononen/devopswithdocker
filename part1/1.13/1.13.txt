@@ -1,0 +1,34 @@
+marko@arthur 1.13 % cp -R ../material-applications/example-backend/* .
+marko@arthur 1.13 % docker build . -t backend && docker run -d -p 8080:8080 backend 
+[+] Building 28.9s (11/11) FINISHED                                                                                                                                                                         
+ => [internal] load build definition from Dockerfile                                                                                                                                                   0.0s
+ => => transferring dockerfile: 198B                                                                                                                                                                   0.0s
+ => [internal] load .dockerignore                                                                                                                                                                      0.0s
+ => => transferring context: 2B                                                                                                                                                                        0.0s
+ => [internal] load metadata for docker.io/library/golang:1.16                                                                                                                                         3.6s
+ => [auth] library/golang:pull token for registry-1.docker.io                                                                                                                                          0.0s
+ => [1/5] FROM docker.io/library/golang:1.16@sha256:6f0b0a314b158ff6caf8f12d7f6f3a966500ec6afb533e986eca7375e2f7560f                                                                                  14.7s
+ => => resolve docker.io/library/golang:1.16@sha256:6f0b0a314b158ff6caf8f12d7f6f3a966500ec6afb533e986eca7375e2f7560f                                                                                   0.0s
+ => => sha256:d7ebd58d1aba8b298c2e00a594811de5aa330152867f74366b71435234387f41 7.00kB / 7.00kB                                                                                                         0.0s
+ => => sha256:349e49d5a901a03c4cbe2d23a36027e93036c1867ed92322d5cd6543a45775a5 62.60MB / 62.60MB                                                                                                      10.5s
+ => => sha256:4a7746c2db38d3ab2cc176195d64e01762c0450753d79d7af9419cd2a64747c3 99.61MB / 99.61MB                                                                                                       9.6s
+ => => sha256:3ddbaa06263d9ac0846e7ca6865d0c742c10f14a1ac6e6fc854e107e55f24949 155B / 155B                                                                                                             0.3s
+ => => sha256:6f0b0a314b158ff6caf8f12d7f6f3a966500ec6afb533e986eca7375e2f7560f 2.36kB / 2.36kB                                                                                                         0.0s
+ => => sha256:14540f989d6914f5502295530b488c7f623374ee1308e1b63ca0a37dfc1d9086 1.79kB / 1.79kB                                                                                                         0.0s
+ => => extracting sha256:349e49d5a901a03c4cbe2d23a36027e93036c1867ed92322d5cd6543a45775a5                                                                                                              1.4s
+ => => extracting sha256:4a7746c2db38d3ab2cc176195d64e01762c0450753d79d7af9419cd2a64747c3                                                                                                              2.3s
+ => => extracting sha256:3ddbaa06263d9ac0846e7ca6865d0c742c10f14a1ac6e6fc854e107e55f24949                                                                                                              0.0s
+ => [internal] load build context                                                                                                                                                                      0.0s
+ => => transferring context: 30.49kB                                                                                                                                                                   0.0s
+ => [2/5] WORKDIR /usr/src/app                                                                                                                                                                         0.1s
+ => [3/5] COPY . .                                                                                                                                                                                     0.0s
+ => [4/5] RUN go build                                                                                                                                                                                 6.3s
+ => [5/5] RUN go test ./...                                                                                                                                                                            3.3s 
+ => exporting to image                                                                                                                                                                                 0.8s 
+ => => exporting layers                                                                                                                                                                                0.7s 
+ => => writing image sha256:4a515c086a1d528dc2f3c0b86dc3b812d80d78dfe5325ae8b088539ccc024069                                                                                                           0.0s 
+ => => naming to docker.io/library/backend                                                                                                                                                             0.0s 
+719ceaa49e861464127c87b3527ffe632d642adb3738df3b8f1300651f13632c                                                                                                                                            
+marko@arthur 1.13 % curl http://localhost:8080/ping
+pong%                                                                                                                                                                                                       marko@arthur 1.13 % 
+

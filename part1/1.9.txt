@@ -1,0 +1,15 @@
+marko@arthur devopswithdocker % touch text.log
+marko@arthur devopswithdocker % docker run -v "$(pwd)/text.log:/usr/src/app/text.log" devopsdockeruh/simple-web-service
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+Starting log output
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+Wrote text to /usr/src/app/text.log
+^C%                                                                                                                                                                                                         marko@arthur devopswithdocker % cat text.log 
+2021-05-25 10:57:19 +0000 UTC
+2021-05-25 10:57:21 +0000 UTC
+2021-05-25 10:57:23 +0000 UTC
+2021-05-25 10:57:25 +0000 UTC
+marko@arthur devopswithdocker % 
+

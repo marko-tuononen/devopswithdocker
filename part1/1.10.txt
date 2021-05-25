@@ -1,0 +1,6 @@
+marko@arthur devopswithdocker % docker run -d -p 8080:8080 web-server
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+7853afe4570d04a5613d0757724065b076a0498fe09e2d9c036f2388eeac37f6
+marko@arthur devopswithdocker % curl localhost:8080
+{"message":"You connected to the following path: /","path":"/"}
+marko@arthur devopswithdocker % 

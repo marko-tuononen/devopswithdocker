@@ -1,0 +1,30 @@
+marko@arthur devopswithdocker % docker pull devopsdockeruh/simple-web-service:ubuntu
+ubuntu: Pulling from devopsdockeruh/simple-web-service
+Digest: sha256:d44e1dce398732e18c7c2bad9416a072f719af33498302b02929d4c112e88d2a
+Status: Image is up to date for devopsdockeruh/simple-web-service:ubuntu
+docker.io/devopsdockeruh/simple-web-service:ubuntu
+marko@arthur devopswithdocker % docker pull devopsdockeruh/simple-web-service:alpine
+alpine: Pulling from devopsdockeruh/simple-web-service
+ba3557a56b15: Pull complete 
+1dace236434b: Pull complete 
+4f4fb700ef54: Pull complete 
+Digest: sha256:dd4d367476f86b7d7579d3379fe446ae5dfce25480903fb0966fc2e5257e0543
+Status: Downloaded newer image for devopsdockeruh/simple-web-service:alpine
+docker.io/devopsdockeruh/simple-web-service:alpine
+marko@arthur devopswithdocker % docker images       
+REPOSITORY                          TAG       IMAGE ID       CREATED        SIZE
+ubuntu                              latest    6a98cbe39225   4 weeks ago    65.5MB
+devopsdockeruh/simple-web-service   ubuntu    4e3362e907d5   2 months ago   83MB
+devopsdockeruh/simple-web-service   alpine    fd312adc88e0   2 months ago   15.7MB
+marko@arthur devopswithdocker % 
+marko@arthur devopswithdocker % docker run -it -d devopsdockeruh/simple-web-service:alpine 
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested
+6ab31b13002b2b1c7f5d13a1847f9a263872c2c438b587c56e5dad1a795e15b6
+marko@arthur devopswithdocker % docker exec -it 6ab cat /usr/src/app/text.log
+2021-05-24 13:44:56 +0000 UTC
+2021-05-24 13:44:58 +0000 UTC
+2021-05-24 13:45:00 +0000 UTC
+2021-05-24 13:45:02 +0000 UTC
+2021-05-24 13:45:04 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+
