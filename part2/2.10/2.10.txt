@@ -1,0 +1,6 @@
+marko@arthur 2.10 % cp -R ../../material-applications/example-frontend/* .
+marko@arthur 2.10 % cp ../../part1/1.12/Dockerfile .
+marko@arthur 2.10 % nano Dockerfile 
+  < remove line ENV REACT_APP_BACKEND_URL=http://localhost:8080 >
+marko@arthur 2.10 % docker build . -t frontend
+...

@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  backend:
+    image: backend
+    environment:
+      - REDIS_HOST=redis
+      - POSTGRES_HOST=postgres
+  frontend:
+    image: frontend
+    environment:
+      - REACT_APP_BACKEND_URL=http://localhost/api
+  redis:
+    image: redis
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DATABASE=postgres
+    volumes:
+      - database:/var/lib/postgresql/data
+    restart: unless-stopped
+  nginx:
+    image: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+
+volumes:
+  database:  

@@ -1,0 +1,23 @@
+version: '3.8'
+
+# application has now readiness for the further development
+# --> database, frontend, load-balancing, scaling
+services:
+  backend:
+    build: my_flask_torch_app
+    container_name: my-flask-torch-devenv
+    command: app.py
+    ports:
+      - 5000:5000
+
+ # for example
+ #frontend:
+ #  build: my_react_app
+ #  command: npm start 
+ #  ports: 
+ #    - 3000:3000
+ #  volumes:
+ #    - node_modules:/usr/src/app/node_modules
+ #  container_name: my-react-devenv
+#volumes: # This is required for the node_modules named volume
+# node_modules:

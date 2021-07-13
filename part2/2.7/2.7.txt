@@ -1,0 +1,32 @@
+marko@arthur 2.7 % git clone https://github.com/docker-hy/ml-kurkkumopo-frontend
+Cloning into 'ml-kurkkumopo-frontend'...
+remote: Enumerating objects: 75, done.
+remote: Counting objects: 100% (37/37), done.
+remote: Compressing objects: 100% (37/37), done.
+remote: Total 75 (delta 24), reused 0 (delta 0), pack-reused 38
+Receiving objects: 100% (75/75), 910.74 KiB | 4.32 MiB/s, done.
+Resolving deltas: 100% (36/36), done.
+marko@arthur 2.7 % git clone https://github.com/docker-hy/ml-kurkkumopo-backend 
+Cloning into 'ml-kurkkumopo-backend'...
+remote: Enumerating objects: 55, done.
+remote: Counting objects: 100% (22/22), done.
+remote: Compressing objects: 100% (20/20), done.
+remote: Total 55 (delta 10), reused 4 (delta 2), pack-reused 33
+Receiving objects: 100% (55/55), 10.51 KiB | 1.05 MiB/s, done.
+Resolving deltas: 100% (25/25), done.
+marko@arthur 2.7 % git clone https://github.com/docker-hy/ml-kurkkumopo-training
+Cloning into 'ml-kurkkumopo-training'...
+remote: Enumerating objects: 43, done.
+remote: Counting objects: 100% (16/16), done.
+remote: Compressing objects: 100% (16/16), done.
+remote: Total 43 (delta 6), reused 1 (delta 0), pack-reused 27
+Receiving objects: 100% (43/43), 59.51 KiB | 1.19 MiB/s, done.
+Resolving deltas: 100% (17/17), done.
+marko@arthur 2.7 % 
+marko@arthur 2.7 % docker build ml-kurkkumopo-frontend -t ml-kurkkumopo-frontend
+...
+marko@arthur 2.7 % docker build ml-kurkkumopo-backend -t ml-kurkkumopo-backend
+...
+marko@arthur 2.7 % docker build ml-kurkkumopo-training -t ml-kurkkumopo-training
+...
+marko@arthur 2.7 % 

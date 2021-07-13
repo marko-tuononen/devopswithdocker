@@ -1,0 +1,14 @@
+marko@arthur scaling-exercise % docker compose up --scale compute=3
+[+] Running 5/0
+ ⠿ Container 25_compute_3   Created                                                                                                                                                                                                                                        0.0s
+ ⠿ Container 25_compute_2   Created                                                                                                                                                                                                                                        0.0s
+ ⠿ Container calculator     Created                                                                                                                                                                                                                                        0.0s
+ ⠿ Container load-balancer  Recreated                                                                                                                                                                                                                                      0.1s
+ ⠿ Container 25_compute_1   Recreated                                                                                                                                                                                                                                      0.1s
+Attaching to compute_1, compute_2, compute_3, calculator, load-balancer
+compute_3      | I am alive in port 3000!
+compute_1      | I am alive in port 3000!
+compute_2      | I am alive in port 3000!
+load-balancer  | Custom dhparam.pem file found, generation skipped
+...
+
