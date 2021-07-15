@@ -1,0 +1,7 @@
+BEFORE OPTIMIZATION:
+
+my_flask_torch_app - 2.99GB
+
+AFTER OPTIMIZATION:
+
+my_flask_torch_app - 1.52GB

@@ -1,0 +1,11 @@
+BEFORE OPTIMIZATION:
+
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+frontend     latest    65af6e073ad8   51 seconds ago   292MB
+backend      latest    5442c8e84bef   24 seconds ago   150MB
+
+AFTER OPTIMIZATION:
+
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+frontend     latest    7b36e4419e31   24 seconds ago   61MB
+backend      latest    e1fefd06162a   2 seconds ago   22.4MB

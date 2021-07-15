@@ -1,0 +1,49 @@
+marko@arthur 3.2 % docker run -it -v /var/run/docker.sock:/var/run/docker.sock build-image-inside-container
+Cloning into 'docker-hy.github.io'...
+remote: Enumerating objects: 1672, done.
+remote: Counting objects: 100% (301/301), done.
+remote: Compressing objects: 100% (159/159), done.
+remote: Total 1672 (delta 159), reused 256 (delta 130), pack-reused 1371
+Receiving objects: 100% (1672/1672), 972.19 KiB | 4.21 MiB/s, done.
+Resolving deltas: 100% (932/932), done.
+[+] Building 12.8s (17/17) FINISHED                                                                                                                                                                                                                                             
+ => [internal] load build definition from Dockerfile                                                                                                                                                                                                                       0.0s
+ => => transferring dockerfile: 354B                                                                                                                                                                                                                                       0.0s
+ => [internal] load .dockerignore                                                                                                                                                                                                                                          0.0s
+ => => transferring context: 71B                                                                                                                                                                                                                                           0.0s
+ => [internal] load metadata for docker.io/jekyll/jekyll:3.8.3                                                                                                                                                                                                             1.3s
+ => [internal] load metadata for docker.io/library/node:alpine                                                                                                                                                                                                             1.3s
+ => [build-stage 1/8] FROM docker.io/jekyll/jekyll:3.8.3@sha256:63373094d5c200e5930acd91068ba17aeb059b890546916f297f1d012a65d736                                                                                                                                           0.0s
+ => [stage-1 1/3] FROM docker.io/library/node:alpine@sha256:50b33102c307e04f73817dad87cdae145b14782875495ddd950b5a48e4937c70                                                                                                                                               0.0s
+ => [internal] load build context                                                                                                                                                                                                                                          0.1s
+ => => transferring context: 1.77MB                                                                                                                                                                                                                                        0.1s
+ => CACHED [build-stage 2/8] WORKDIR /tmp                                                                                                                                                                                                                                  0.0s
+ => CACHED [build-stage 3/8] COPY Gemfile* ./                                                                                                                                                                                                                              0.0s
+ => CACHED [build-stage 4/8] RUN bundle install                                                                                                                                                                                                                            0.0s
+ => CACHED [build-stage 5/8] WORKDIR /usr/src/app                                                                                                                                                                                                                          0.0s
+ => [build-stage 6/8] COPY . .                                                                                                                                                                                                                                             0.0s
+ => [build-stage 7/8] RUN chown -R jekyll .                                                                                                                                                                                                                                0.3s
+ => [build-stage 8/8] RUN jekyll build                                                                                                                                                                                                                                    10.9s
+ => CACHED [stage-1 2/3] RUN npm install -g serve                                                                                                                                                                                                                          0.0s
+ => [stage-1 3/3] COPY --from=build-stage /usr/src/app/_site/ /usr/src/html                                                                                                                                                                                                0.0s
+ => exporting to image                                                                                                                                                                                                                                                     0.0s 
+ => => exporting layers                                                                                                                                                                                                                                                    0.0s 
+ => => writing image sha256:fa476d493877f1013c384997ff2e667eafa955315baa88f58a89d8282a6136de                                                                                                                                                                               0.0s 
+ => => naming to docker.io/markotuononen/devops-with-docker-task3.2:latest                                                                                                                                                                                                 0.0s 
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username: markotuononen
+Password: 
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+The push refers to repository [docker.io/markotuononen/devops-with-docker-task3.2]
+71c80181cb98: Pushed 
+7c1ab779652a: Layer already exists 
+81e9a6f47c8b: Layer already exists 
+d4476c6a1f28: Layer already exists 
+c1edff3b286f: Layer already exists 
+c55d5dbdab40: Layer already exists 
+latest: digest: sha256:6c393f0cc65ee15dc0e111110192db1a7cff935cca5d266e53015389fe4bd92f size: 1579
+marko@arthur 3.2 % 

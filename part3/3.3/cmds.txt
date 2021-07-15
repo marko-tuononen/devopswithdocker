@@ -1,0 +1,14 @@
+marko@arthur 3.3 % cd backend                     
+marko@arthur backend % cp -R ../../../material-applications/example-backend/* .
+marko@arthur backend % docker build . -t backend
+...
+marko@arthur backend % docker run -d -p 8080:8080 backend
+f9e294034ebc766dc91d71ebeacf787b4bfca5bbf746be5399aac4e72789f607
+marko@arthur backend % cd ..
+marko@arthur 3.3 % cd frontend
+marko@arthur frontend % cp -R ../../../material-applications/example-frontend/* .  
+marko@arthur frontend % docker build . -t frontend
+...
+marko@arthur frontend % docker run -d -p 5000:5000 frontend 
+1484808d028264ac52a72a62d8127e940f9bdbcb2a71c4ab13705ed69eed63e8
+marko@arthur frontend % 
